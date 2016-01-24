@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'ununiga/jaso_splitter'
 
-class JamoSplitterTest < Minitest::Test
+class JamoSplitterTest < Minitest::Unit::TestCase
   def test_extract_chosung
     testgroup = { '가' => 'ㄱ',
                   '낳' => 'ㄴ',

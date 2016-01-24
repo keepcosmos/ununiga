@@ -24,6 +24,14 @@ module Ununiga
       end
     end
 
+    def josas
+      res = []
+      korean_str.scan josa_regexp do |matched|
+        res << [$~.offset(0)[0], JOSAS.find { |josa| josa.include? matched[0] }]
+      end
+      res
+    end
+
     private
 
     def josa_regexp
