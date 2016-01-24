@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'ununiga/jaso_splitter'
 
-class UnunigaTest < Minitest::Test
+class JamoSplitterTest < Minitest::Test
   def test_extract_chosung
     testgroup = { '가' => 'ㄱ',
                   '낳' => 'ㄴ',
@@ -50,10 +50,8 @@ class UnunigaTest < Minitest::Test
   end
 
   def test_non_korean_exception
-    %w(a 中 ची Қ に).each do |char|
-      assert_raises ArgumentError do
-        Ununiga::JasoSplitter.new(char)
-      end
+    %w(a 中 च Қ に).each do |char|
+      assert !Ununiga::JasoSplitter.new(char).korean?
     end
   end
 

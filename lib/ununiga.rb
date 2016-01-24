@@ -1,7 +1,6 @@
-require 'ununiga/translator'
-require 'ununiga/word_splitter'
-require 'i18n'
+require 'ununiga/version'
 
 module Ununiga
-  autoload :Translator, 'ununiga/traslator'
+  autoload :JasoSplitter, 'ununiga/jamo_splitter'
+  autoload :JosaPicker, 'ununiga/josa_picker'
 end
