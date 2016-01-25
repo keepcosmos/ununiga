@@ -1,7 +1,7 @@
 require 'ununiga/jaso_splitter'
 
 module Ununiga
-  # 한글 초성, 중성, 종성 분리기
+  # 한글 조사 변경 클래스
   class JosaPicker
     JOSAS = [%w(은 는),
              %w(이 가),
@@ -53,12 +53,11 @@ module Ununiga
         end
     end
 
-    # JOSAS의 element가 온다.
     def josa_convension(josa)
       if josa[0].size == 1
         ["#{josa[0]}(#{josa[1]})", "#{josa[1]}(#{josa[0]})"]
       elsif josa[0].size == 2
-        ["#{josa[0][0]}(#{josa[1]})"]
+        ["(#{josa[0][0]})#{josa[1]}"]
       end
     end
   end
