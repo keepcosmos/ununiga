@@ -9,5 +9,6 @@ Gem::Specification.new do |s|
   s.files       = ['lib/ununiga.rb']
   s.homepage    = 'https://github.com/keepcosmos/ununiga'
   s.add_development_dependency 'i18n'
+  s.add_development_dependency 'minitest'
   s.license     = 'MIT'
 end

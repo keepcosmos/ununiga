@@ -6,9 +6,17 @@ module Ununiga
     JOSAS = [%w(은 는),
              %w(이 가),
              %w(을 를),
-             %w(과 와)].freeze
+             %w(과 와),
+             %w(으로 로)
+            ].freeze
 
     attr_reader :korean_str
+
+    class << self
+      def takewell(str)
+        new(str).takewell
+      end
+    end
 
     def initialize(str)
       @korean_str = str
@@ -18,7 +26,7 @@ module Ununiga
       korean_str.gsub josa_regexp do |matched|
         index = $~.offset(0)[0]
         next if index == 0
-        josa = JOSAS.find { |josa| josa.include? matched[0] }
+        josa = JOSAS.find { |josa| josa_convension(josa).include? matched }
         splitter = JasoSplitter.new(korean_str[index - 1])
         josa[(splitter.jongsung ? 0 : 1)]
       end
@@ -37,9 +45,21 @@ module Ununiga
     def josa_regexp
       @_josa_regexp ||=
         begin
-          josa_regexp_seq = JOSAS.map { |a| ["#{a[0]}\\(#{a[1]}\\)".freeze, "#{a[1]}\\(#{a[0]}\\)".freeze] }
+          josa_regexp_seq = JOSAS.map do |josa|
+            conv = josa_convension(josa)
+            conv.map { |str| str.gsub!('(', '\\(').gsub!(')', '\\)') }
+          end
           Regexp.new(josa_regexp_seq.flatten.join('|'))
         end
+    end
+
+    # JOSAS의 element가 온다.
+    def josa_convension(josa)
+      if josa[0].size == 1
+        ["#{josa[0]}(#{josa[1]})", "#{josa[1]}(#{josa[0]})"]
+      elsif josa[0].size == 2
+        ["#{josa[0][0]}(#{josa[1]})"]
+      end
     end
   end
 end

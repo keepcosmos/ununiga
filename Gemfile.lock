@@ -7,12 +7,14 @@ GEM
   remote: http://www.rubygems.org/
   specs:
     i18n (0.7.0)
+    minitest (5.8.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   i18n
+  minitest
   ununiga!
 
 BUNDLED WITH

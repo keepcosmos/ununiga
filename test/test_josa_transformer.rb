@@ -1,7 +1,6 @@
 require 'minitest/autorun'
-require 'ununiga/josa_picker'
-require 'ununiga/i18n/josa_transformer'
 require 'i18n'
+require 'ununiga/i18n/josa_transformer'
 
 class JosaTransformerTest < Minitest::Unit::TestCase
   def setup

@@ -4,9 +4,14 @@ require 'ununiga/josa_picker'
 class JosaPickerTest < Minitest::Unit::TestCase
   def test_takewell
     assert_equal '철수가 개발을 좋아합니다.', takewell('철수이(가) 개발을(를) 좋아합니다.')
+
     assert_equal '레일즈는 루비를 사용합니다.', takewell('레일즈은(는) 루비을(를) 사용합니다.')
-    assert_equal '레일즈는 루비를 사용합니다.', takewell('레일즈은(는) 루비을(를) 사용합니다.')
+    assert_equal '레일즈는 루비를 사용합니다.', takewell('레일즈는(은) 루비를(을) 사용합니다.')
+
     assert_equal '레일즈와 쟝고는 싸우지 않습니다.', takewell('레일즈와(과) 쟝고은(는) 싸우지 않습니다.')
+    
+    assert_equal '페이스북으로부터 인증되었습니다.', takewell('페이스북으(로)부터 인증되었습니다.')
+    assert_equal '트위터로부터 인증되었습니다.', takewell('트위터으(로)부터 인증되었습니다.')
   end
 
   def test_find_josas
