@@ -10,8 +10,8 @@ class JosaPickerTest < Minitest::Unit::TestCase
 
     assert_equal '레일즈와 쟝고는 싸우지 않습니다.', takewell('레일즈와(과) 쟝고은(는) 싸우지 않습니다.')
     
-    assert_equal '페이스북으로부터 인증되었습니다.', takewell('페이스북으(로)부터 인증되었습니다.')
-    assert_equal '트위터로부터 인증되었습니다.', takewell('트위터으(로)부터 인증되었습니다.')
+    assert_equal '페이스북으로부터 인증되었습니다.', takewell('페이스북(으)로부터 인증되었습니다.')
+    assert_equal '트위터로부터 인증되었습니다.', takewell('트위터(으)로부터 인증되었습니다.')
   end
 
   def test_find_josas

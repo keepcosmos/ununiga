@@ -58,7 +58,7 @@ module Ununiga
       if josa[0].size == 1
         ["#{josa[0]}(#{josa[1]})", "#{josa[1]}(#{josa[0]})"]
       elsif josa[0].size == 2
-        ["#{josa[0][0]}(#{josa[1]})"]
+        ["(#{josa[0][0]})#{josa[1]}"]
       end
     end
   end
