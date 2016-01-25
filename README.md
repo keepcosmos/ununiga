@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/keepcosmos/ununiga.svg?branch=master)](https://travis-ci.org/keepcosmos/ununiga)
-작성중 ...
+[![Gem Version](https://badge.fury.io/rb/ununiga.svg)](https://badge.fury.io/rb/ununiga)
+
 # ununiga[은는이가]
 
 은는이가는 한글의 자소분리를 분리하고 조사를 찾아주는 역할을 합니다.  
