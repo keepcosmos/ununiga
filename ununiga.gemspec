@@ -8,5 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'keepcosmos@gmail.com'
   s.files       = ['lib/ununiga.rb']
   s.homepage    = 'https://github.com/keepcosmos/ununiga'
+  s.add_development_dependency 'i18n'
   s.license     = 'MIT'
 end

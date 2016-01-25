@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    ununiga (1.0.0)
+
+GEM
+  remote: http://www.rubygems.org/
+  specs:
+    i18n (0.7.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  i18n
+  ununiga!
+
+BUNDLED WITH
+   1.11.2
