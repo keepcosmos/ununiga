@@ -52,6 +52,15 @@ errors:
     equal_to: 은(는) %{count}와(과) 같아야 합니다
 ```
 
+### 자소 분리하기
+```ruby
+splitter = Ununiga::JasoSplitter.new('흯')
+splitter.chosung       # => 'ㅎ'
+splitter.jungsung      # => 'ㅢ'
+splitter.jongsung      # => 'ㄳ'
+splitter.split         # => ['ㅎ', 'ㅢ', 'ㄳ']
+```
+
 ## Test
 두가지 방식으로 테스트 할 수 있습니다.
 * `rake test` 혹은 그냥 `rake` 커맨드를 사용합니다.
