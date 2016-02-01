@@ -7,7 +7,7 @@ module Ununiga::I18n
     end
 
     def transform(entry)
-      if !entry.is_a?(Hash) && I18n.locale.to_s =~ /ko|ko_KR/i
+      if entry.is_a?(String) && I18n.locale.to_s =~ /ko|ko_KR/i
         return Ununiga::JosaPicker.new(entry).takewell
       end
       entry

@@ -22,5 +22,8 @@ class JosaTransformerTest < Minitest::Unit::TestCase
     assert_equal '정하와 민정은 디자인을 합니다.', I18n.t(:do_something_with_someone, name1: '정하', name2: '민정', doing: '디자인')
   end
 
-  
+  def test_not_string_locale_value
+    assert_equal 234.234234, I18n.t(:float_value)
+    assert_equal ({ first: '1', second: '2' }), I18n.t(:nested_value)
+  end
 end
