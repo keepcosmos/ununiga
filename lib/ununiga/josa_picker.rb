@@ -25,10 +25,13 @@ module Ununiga
     def takewell
       korean_str.gsub josa_regexp do |matched|
         index = $~.offset(0)[0]
-        next if index == 0
-        josa = JOSAS.find { |josa| josa_convension(josa).include? matched }
-        splitter = JasoSplitter.new(korean_str[index - 1])
-        josa[(splitter.jongsung ? 0 : 1)]
+        if index == 0
+          matched
+        else
+          josa = JOSAS.find { |josa| josa_convension(josa).include? matched }
+          splitter = JasoSplitter.new(korean_str[index - 1])
+          josa[(splitter.jongsung ? 0 : 1)]
+        end
       end
     end
 
