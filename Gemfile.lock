@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ununiga (1.0.4)
+    ununiga (1.0.5)
 
 GEM
   remote: http://www.rubygems.org/
