@@ -18,7 +18,9 @@ class JamoSplitterTest < Minitest::Unit::TestCase
     testgroup = { '가' => 'ㅏ',
                   '내' => 'ㅐ',
                   '찋' => 'ㅢ',
-                  '휷' => 'ㅠ'
+                  '휷' => 'ㅠ',
+                  '쿄' => 'ㅛ',
+                  '왜' => 'ㅙ'
                 }
     testgroup.each do |char, jungsung|
       splitter = Ununiga::JasoSplitter.new(char)
@@ -41,7 +43,8 @@ class JamoSplitterTest < Minitest::Unit::TestCase
   def test_split
     testgroup = { '신' => ['ㅅ', 'ㅣ', 'ㄴ'],
                   '재' => ['ㅈ', 'ㅐ', nil],
-                  '현' => ['ㅎ', 'ㅕ', 'ㄴ']
+                  '현' => ['ㅎ', 'ㅕ', 'ㄴ'],
+                  '꾢' => ['ㄲ', 'ㅛ', 'ㄶ']
                 }
     testgroup.each do |char, splitted|
       splitter = Ununiga::JasoSplitter.new(char)
