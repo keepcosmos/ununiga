@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ununiga (1.0.5)
+    ununiga (1.1.0)
 
 GEM
   remote: http://www.rubygems.org/
@@ -18,4 +18,4 @@ DEPENDENCIES
   ununiga!
 
 BUNDLED WITH
-   1.11.2
+   2.0.1
