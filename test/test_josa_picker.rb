@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'ununiga/josa_picker'
 
-class JosaPickerTest < Minitest::Unit::TestCase
+class JosaPickerTest < Minitest::Test
   def test_takewell
     assert_equal '철수가 개발을 좋아합니다.', takewell('철수이(가) 개발을(를) 좋아합니다.')
 

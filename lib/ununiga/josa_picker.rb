@@ -28,7 +28,7 @@ module Ununiga
         if index == 0
           matched
         else
-          josa = JOSAS.find { |josa| josa_convension(josa).include? matched }
+          josa = JOSAS.find { |jo| josa_convension(jo).include? matched }
           splitter = JasoSplitter.new(korean_str[index - 1])
           josa[(splitter.jongsung ? 0 : 1)]
         end

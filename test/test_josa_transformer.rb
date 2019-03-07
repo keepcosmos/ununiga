@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'i18n'
 require 'ununiga/i18n/josa_transformer'
 
-class JosaTransformerTest < Minitest::Unit::TestCase
+class JosaTransformerTest < Minitest::Test
   def setup
     super
     I18n::Backend::Simple.send(:include, Ununiga::I18n::JosaTransformer)

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'ununiga/jaso_splitter'
 
-class JamoSplitterTest < Minitest::Unit::TestCase
+class JamoSplitterTest < Minitest::Test
   def test_extract_chosung
     testgroup = { '가' => 'ㄱ',
                   '낳' => 'ㄴ',
@@ -36,7 +36,11 @@ class JamoSplitterTest < Minitest::Unit::TestCase
                 }
     testgroup.each do |char, jongsung|
       splitter = Ununiga::JasoSplitter.new(char)
-      assert_equal jongsung, splitter.extract_jongsung
+      if jongsung
+        assert_equal jongsung, splitter.extract_jongsung
+      else
+        assert_nil splitter.extract_jongsung
+      end
     end
   end
 
