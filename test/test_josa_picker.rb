@@ -12,6 +12,9 @@ class JosaPickerTest < Minitest::Test
 
     assert_equal '페이스북으로부터 인증되었습니다.', takewell('페이스북(으)로부터 인증되었습니다.')
     assert_equal '트위터로부터 인증되었습니다.', takewell('트위터(으)로부터 인증되었습니다.')
+    
+    assert_equal '초록이의 돌봄이 시작됩니다.', takewell('초록(이)의 돌봄이 시작됩니다.')
+    assert_equal '앵두의 돌봄이 시작됩니다.', takewell('앵두(이)의 돌봄이 시작됩니다.')
   end
 
   def test_find_josas
