@@ -8,7 +8,8 @@ module Ununiga
              %w(을 를),
              %w(과 와),
              %w(으로 로),
-             %w(이의 의)
+             %w(이의 의),
+             %w(이),
             ].freeze
 
     attr_reader :korean_str

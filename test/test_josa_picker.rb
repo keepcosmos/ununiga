@@ -15,6 +15,9 @@ class JosaPickerTest < Minitest::Test
     
     assert_equal '초록이의 돌봄이 시작됩니다.', takewell('초록(이)의 돌봄이 시작됩니다.')
     assert_equal '앵두의 돌봄이 시작됩니다.', takewell('앵두(이)의 돌봄이 시작됩니다.')
+
+    assert_equal '초록이 보호자님!', takewell('초록(이) 보호자님!')
+    assert_equal '앵두 보호자님!', takewell('앵두(이) 보호자님!')
   end
 
   def test_find_josas
