@@ -30,6 +30,16 @@ class JosaTransformerTest < Minitest::Test
     assert_equal '<b>곰</b>은 <b>마늘</b>을 먹습니다.', I18n.t("someone_eat_nesting.html", name: '곰', meal: '마늘')
   end
 
+  def test_global_locale_not_ko
+    I18n.locale = :en
+    assert_equal '철수가 돈을 냅니다.', I18n.t(:someone_pay, name: '철수', locale: :ko)
+    assert_equal '재현이 돈을 냅니다.', I18n.t(:someone_pay, name: '재현', locale: :ko)
+
+    assert_equal '호랑이는 사과를 먹습니다.', I18n.t(:someone_eat_something, name: '호랑이', meal: '사과', locale: :ko)
+    assert_equal '곰은 마늘을 먹습니다.', I18n.t(:someone_eat_something, name: '곰', meal: '마늘', locale: :ko)
+    I18n.locale = :ko
+  end
+
   def test_not_string_locale_value
     assert_equal 234.234234, I18n.t(:float_value)
     assert_equal ({ first: '1', second: '2' }), I18n.t(:nested_value)
