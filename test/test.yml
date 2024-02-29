@@ -2,6 +2,9 @@ ko:
   someone_pay: '%{name}이(가) 돈을 냅니다.'
   someone_eat_something: '%{name}은(는) %{meal}을(를) 먹습니다.'
   do_something_with_someone: '%{name1}와(과) %{name2}은(는) %{doing}을(를) 합니다.'
+  someone_pay_html: '<b>%{name}</b>이(가) 돈을 냅니다.'
+  someone_eat_nesting:
+    html: '<b>%{name}</b>은(는) <b>%{meal}</b>을(를) 먹습니다.'
   float_value: 234.234234
   nested_value:
     first: '1'

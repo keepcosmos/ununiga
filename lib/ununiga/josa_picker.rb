@@ -12,7 +12,7 @@ module Ununiga
              %w(이),
             ].freeze
 
-    attr_reader :korean_str
+    attr_reader :korean_str, :is_html
 
     class << self
       def takewell(str)
@@ -20,8 +20,9 @@ module Ununiga
       end
     end
 
-    def initialize(str)
+    def initialize(str, is_html = false)
       @korean_str = str
+      @is_html = is_html
     end
 
     def takewell
@@ -31,7 +32,12 @@ module Ununiga
           matched
         else
           josa = JOSAS.find { |jo| josa_convension(jo).include? matched }
-          splitter = JasoSplitter.new(korean_str[index - 1])
+          preceding_char = if is_html
+            korean_str[0...index].gsub(/<[^>]*>/, "")[-1]
+          else
+            korean_str[index - 1]
+          end
+          splitter = JasoSplitter.new(preceding_char)
           josa[(splitter.jongsung ? 0 : 1)]
         end
       end
